@@ -4,7 +4,7 @@ in "~/.erlang":
 
 in "rebar.config":
     {deps, [
-    	{rebar_proper_plugin, ".*", {git, "...", "master"}}
+    	{rebar_proper_plugin, ".*", {git, "git://github.com/andrzejsliwa/rebar_proper_plugin.git", "master"}}
     ]}.
 
     {plugins, [rebar_proper_plugin]}.
@@ -16,3 +16,11 @@ in "rebar.config":
 in command line:
 
     rebar proper
+
+
+TODO:
+
+  - tests
+  - cleanup
+  - enable travis
+  - docs
