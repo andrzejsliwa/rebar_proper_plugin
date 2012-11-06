@@ -1,0 +1,12 @@
+{application, rebar_proper_plugin,
+ [
+  {description, "PropEr integration plugin"},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {module, [rebar_proper_plugin]},
+  {env, []}
+ ]}.
