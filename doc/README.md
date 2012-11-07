@@ -3,7 +3,7 @@
 #rebar_proper_plugin#
 
 
-Copyright (c) 2012 Andrzej Sliwa.
+Copyright (c) 2012 Andrzej Śliwa.
 
 __Version:__ 0.1
 
