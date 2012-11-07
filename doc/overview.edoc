@@ -57,6 +57,7 @@ To generate doc, run 'make doc'.
 
 To use plugin:
 
+
 Add it to own '~/.erlang' file
 ```
 code:add_pathz("/Users/andrzejsliwa/.erlang_tools/deps/proper/ebin").
