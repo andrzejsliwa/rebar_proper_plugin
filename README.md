@@ -1,6 +1,6 @@
 
 
-#rebar_proper_plugin - simple rebar plugin for handling PropEr tests#
+#rebar_proper_plugin#
 
 
 Copyright (c) 2012 Andrzej Sliwa.
