@@ -4,7 +4,7 @@ REBAR = `which rebar || echo ./rebar`
 .PHONY: doc deps
 
 # default task
-all: deps compile
+all: dist_clean deps compile
 
 # Compiles erlang sources
 compile:
@@ -19,7 +19,7 @@ deps:
 	@$(REBAR) get-deps
 
 # Removes whole dependencies
-distclean:
+dist_clean:
 	@$(REBAR) delete-deps
 
 # Runs eunit tests

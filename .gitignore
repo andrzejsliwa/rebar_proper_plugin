@@ -13,8 +13,6 @@ ebin
 deps
 log
 erl_crash.dump
-test/example/deps
-test/example/ebin
 .proper
 db/*
 # ignore upgrade packages

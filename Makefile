@@ -1,4 +1,4 @@
-REBAR = `which rebar || echo ./rebar`
+REBAR = ./rebar
 
 # Tells to make that deps is not a file/directory
 .PHONY: doc deps
@@ -25,7 +25,7 @@ deps:
 	@$(REBAR) get-deps
 
 # Removes whole dependencies
-distclean:
+dist_clean:
 	@$(REBAR) delete-deps
 
 # Runs eunit tests
