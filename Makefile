@@ -46,4 +46,3 @@ dev_compile: dev_deps
 # Pulls all dependencies - dev config
 dev_deps:
 	@$(REBAR) -C rebar.dev.config get-deps
-
