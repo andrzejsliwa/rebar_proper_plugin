@@ -58,13 +58,10 @@ Add it to own your rebar config
     ...
 	{rebar_proper_plugin, ".*", {git, "git://github.com/andrzejsliwa/rebar_proper_plugin.git", {branch, "master"}}}
 ]}.
-
 %% define plugin usage
 {plugins, [rebar_proper_plugin]}.
-
 %% define PropEr options
 {proper_opts, [{numtests, 200}]}.
-
 %% define function to check (MFA format)
 {proper_check_spec, [{example, is_empty, 1}]}.
 %% or define just module {proper_check_spec, [example]}.
@@ -79,7 +76,6 @@ $ rebar proper
 Testing example:pop/1
 ........................................................................................................................................................................................................
 OK: Passed 200 test(s).
-
 ...
 '''
 
@@ -98,6 +94,5 @@ using the **Makefile**:
 $ make dev       ; # compile & get deps
 $ make dev_clean ; # clean all files
 '''
-
 
 @end

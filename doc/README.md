@@ -33,13 +33,10 @@ Add it to own your rebar config<pre>%% define deps repo of plugin
     ...
 	{rebar_proper_plugin, ".*", {git, "git://github.com/andrzejsliwa/rebar_proper_plugin.git", {branch, "master"}}}
 ]}.
-
 %% define plugin usage
 {plugins, [rebar_proper_plugin]}.
-
 %% define PropEr options
 {proper_opts, [{numtests, 200}]}.
-
 %% define function to check (MFA format)
 {proper_check_spec, [{example, is_empty, 1}]}.
 %% or define just module {proper_check_spec, [example]}.</pre>
@@ -50,7 +47,6 @@ The basic usage of rebar_proper_plugin (after 'rebar compile') is:<pre>$ rebar p
 Testing example:pop/1
 ........................................................................................................................................................................................................
 OK: Passed 200 test(s).
-
 ...</pre>
 
 ## Contribute
@@ -64,6 +60,7 @@ If you want to contribute patches or improve the doc, you will need to
 build hackney using the `rebar.dev.config`  file. It can also be built
 using the **Makefile**:<pre>$ make dev       ; # compile & get deps
 $ make dev_clean ; # clean all files</pre>
+
 
 ##Modules##
 
