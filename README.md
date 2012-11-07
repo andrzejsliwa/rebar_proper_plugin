@@ -21,6 +21,9 @@ Note: This is a work in progress, see the
 [TODO](http://github.com/andrzejsliwa/rebar_proper_plugin/blob/master/TODO.md) for more
 informations on what still need to be done.
 
+## License
+See [LICENSE](http://github.com/andrzejsliwa/rebar_proper_plugin/blob/master/LICENSE) file for licensing information.
+
 ## Installation
 
 Download the sources from our [Github
