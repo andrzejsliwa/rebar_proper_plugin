@@ -26,7 +26,8 @@ informations on what still need to be done.
 Download the sources from our [Github
 repository](http://github.com/andrzejsliwa/rebar_proper_plugin)
 
-Important!: Plugin tested with 'rebar 2.0.0 R15B02 20121106_155240 git 2.0.0-237-ga2fb8fd'
+Important!: Plugin tested with **rebar 2.0.0 R15B02 20121106_155240 git 2.0.0-237-ga2fb8fd**
+
 To generate doc, run 'make doc'.
 
 To use plugin:Add it to own '~/.erlang' file
