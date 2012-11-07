@@ -62,8 +62,8 @@ issue](http://github.com/andrzejsliwa/rebar_proper_plugin/issues).
 
 If you want to contribute patches or improve the doc, you will need to
 build hackney using the `rebar.dev.config`  file. It can also be built
-using the **Makefile**:<pre>$ make dev ; # compile & get deps
-$ make devclean ; # clean all files</pre>
+using the **Makefile**:<pre>$ make dev       ; # compile & get deps
+$ make dev_clean ; # clean all files</pre>
 
 ##Modules##
 

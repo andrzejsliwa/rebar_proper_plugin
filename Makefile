@@ -6,8 +6,10 @@ REBAR = `which rebar || echo ./rebar`
 # default task
 all: deps compile
 
+dev: dev_compile
+
 # generate docs - dev config
-doc: dev_compile
+doc: dev
 	@$(REBAR) -C rebar.dev.config doc
 
 # Compiles erlang sources
