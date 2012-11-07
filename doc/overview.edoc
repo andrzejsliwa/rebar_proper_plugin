@@ -1,0 +1,105 @@
+%%==============================================================================
+%% MIT License
+%%
+%% Copyright (c) 2012 Andrzej Sliwa
+%%
+%% Permission is hereby granted, free of charge, to any person obtaining
+%% a copy of this software and associated documentation files (the
+%% "Software"), to deal in the Software without restriction, including
+%% without limitation the rights to use, copy, modify, merge, publish,
+%% distribute, sublicense, and/or sell copies of the Software, and to
+%% permit persons to whom the Software is furnished to do so, subject to
+%% the following conditions:
+%%
+%% The above copyright notice and this permission notice shall be
+%% included in all copies or substantial portions of the Software.
+%%
+%% THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+%% EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+%% MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+%% NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+%% LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+%% OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+%% WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+%%==============================================================================
+
+
+@copyright 2012 Andrzej Sliwa.
+@version 0.1
+@title rebar_proper_plugin - simple rebar plugin for handling PropEr tests
+
+@doc
+# rebar_proper_plugin
+
+**rebar_proper_plugin** is a simple rebar plugin for handling PropEr tests.
+
+[![Build Status](https://secure.travis-ci.org/andrzejsliwa/rebar_proper_plugin.png?branch=master)](http://travis-ci.org/andrzejsliwa/rebar_proper_plugin)
+
+Main features:
+
+- run all prop_* tests
+- check all specs of module or explicit functions in
+
+
+    Note: This is a work in progress, see the
+[TODO](http://github.com/andrzejsliwa/rebar_proper_plugin/blob/master/TODO.md) for more
+informations on what still need to be done.
+
+## Installation
+
+Download the sources from our [Github
+repository](http://github.com/andrzejsliwa/rebar_proper_plugin)
+
+To generate doc, run 'make doc'.
+
+Add it to own your rebar config
+
+```
+%% define deps repo of plugin
+{deps, [
+    ...
+	{rebar_proper_plugin, ".*", {git, "git://github.com/andrzejsliwa/rebar_proper_plugin.git", {branch, "master"}}}
+]}.
+
+%% define plugin usage
+{plugins, [rebar_proper_plugin]}.
+
+%% define PropEr options
+{proper_opts, [{numtests, 200}]}.
+
+%% define function to check (MFA format)
+{proper_check_spec, [{example, is_empty, 1}]}.
+%% or define just module {proper_check_spec, [example]}.
+'''
+
+## Basic usage
+
+The basic usage of rebar_proper_plugin (after 'rebar compile') is:
+
+```
+$ rebar proper
+Testing example:pop/1
+........................................................................................................................................................................................................
+OK: Passed 200 test(s).
+
+...
+'''
+
+## Contribute
+
+For issues, comments or feedback please [create an
+issue](http://github.com/andrzejsliwa/rebar_proper_plugin/issues).
+
+### Notes for developers
+
+If you want to contribute patches or improve the doc, you will need to
+build hackney using the `rebar.dev.config'  file. It can also be built
+using the **Makefile**:
+
+```
+$ make dev ; # compile & get deps
+$ make devclean ; # clean all files
+'''
+
+
+@end

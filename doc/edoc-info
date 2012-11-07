@@ -1,0 +1,3 @@
+{application,rebar_proper_plugin}.
+{packages,[]}.
+{modules,[rebar_proper_plugin]}.

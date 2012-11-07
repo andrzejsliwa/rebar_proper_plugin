@@ -1,18 +1,30 @@
-REBAR =$(shell which rebar || echo ./rebar)
-ERL  ?= erl
-APP  := example
-.PHONY: deps
+REBAR = `which rebar || echo ./rebar`
 
-all: deps
+# Tells to make that deps is not a file/directory
+.PHONY: doc deps
+
+# default task
+all: deps compile
+
+# Compiles erlang sources
+compile:
 	@$(REBAR) compile
 
-deps:
-	@$(REBAR) get-deps
-
+# Cleans all files
 clean:
 	@$(REBAR) clean
 
+# Pulls all dependencies
+deps:
+	@$(REBAR) get-deps
+
+# Removes whole dependencies
 distclean:
 	@$(REBAR) delete-deps
 
+# Runs eunit tests
+eunit:
+	@$(REBAR) $(REBAR_SKIP_DEPS) eunit skip_deps=true
 
+# Runs all tests clean
+test: clean all eunit

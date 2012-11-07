@@ -71,5 +71,5 @@ $ make devclean ; # clean all files</pre>
 
 
 <table width="100%" border="0" summary="list of modules">
-<tr><td><a href="http://github.com/andrzejsliwa/rebar_proper_plugin/blob/master/doc/rebar_proper_plugin.md" class="module">rebar_proper_plugin</a></td></tr></table>
+<tr><td><a href="rebar_proper_plugin.md" class="module">rebar_proper_plugin</a></td></tr></table>
 

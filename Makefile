@@ -1,35 +1,47 @@
-REBAR?=./rebar
+REBAR = `which rebar || echo ./rebar`
 
-all: build
-
-dev: devbuild
-
-doc: dev
-	$(REBAR) -C rebar.dev.config doc
-
-clean:
-	$(REBAR) clean
-
-distclean: clean
-	@rm -rf deps
-
-build: deps
-	$(REBAR) compile
-
-deps:
-	$(REBAR) get-deps
-
-
-# development
-#
-devclean:
-	$(REBAR) -C rebar.dev.config clean
-
-devbuild: devdeps
-	$(REBAR) -C rebar.dev.config compile
-
-devdeps:
-	$(REBAR) -C rebar.dev.config get-deps
-
-
+# Tells to make that deps is not a file/directory
 .PHONY: doc deps
+
+# default task
+all: deps compile
+
+# generate docs - dev config
+doc: dev_compile
+	@$(REBAR) -C rebar.dev.config doc
+
+# Compiles erlang sources
+compile:
+	@$(REBAR) compile
+
+# Cleans all files
+clean:
+	@$(REBAR) clean
+
+# Pulls all dependencies
+deps:
+	@$(REBAR) get-deps
+
+# Removes whole dependencies
+distclean:
+	@$(REBAR) delete-deps
+
+# Runs eunit tests
+eunit:
+	@$(REBAR) $(REBAR_SKIP_DEPS) eunit skip_deps=true
+
+# Runs all tests clean
+test: clean all eunit
+
+# Cleans all files - dev config
+dev_clean:
+	@$(REBAR) -C rebar.dev.config clean
+
+# Compiles erlang sources - dev config
+dev_compile: dev_deps
+	@$(REBAR) -C rebar.dev.config compile
+
+# Pulls all dependencies - dev config
+dev_deps:
+	@$(REBAR) -C rebar.dev.config get-deps
+
