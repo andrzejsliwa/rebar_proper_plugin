@@ -8,8 +8,6 @@ Copyright (c) 2012 Andrzej Sliwa.
 __Version:__ 0.1
 
 
-# rebar_proper_plugin
-
 **rebar_proper_plugin** is a simple rebar plugin for handling PropEr tests.
 
 [![Build Status](https://secure.travis-ci.org/andrzejsliwa/rebar_proper_plugin.png?branch=master)](http://travis-ci.org/andrzejsliwa/rebar_proper_plugin)
