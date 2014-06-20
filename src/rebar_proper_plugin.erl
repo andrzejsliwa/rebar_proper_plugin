@@ -2,7 +2,6 @@
 -module(rebar_proper_plugin).
 -export([proper/2]).
 
--include_lib("rebar/include/rebar.hrl").
 -define(PROPER_DIR, ".proper").
 
 %% +-----------------------------------------------------------------+
@@ -10,6 +9,14 @@
 %% +-----------------------------------------------------------------+
 proper(Config, _AppFile) ->
     run_proper(Config, proper_opts(Config), proper_check_spec(Config)).
+
+%% +-----------------------------------------------------------------+
+%% | LOGGING MACROS                                                  |
+%% +-----------------------------------------------------------------+
+
+-define(DEBUG(Str, Args), rebar_log:log(debug, Str, Args)).
+-define(CONSOLE(Str, Args), io:format(Str, Args)).
+-define(ABORT(Str, Args), rebar_utils:abort(Str, Args)).
 
 %% +-----------------------------------------------------------------+
 %% | PRIVATE FUNCTIONS                                               |
